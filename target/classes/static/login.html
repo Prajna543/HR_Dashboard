@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - HR Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100" style="background:#f5f8fa;">
+  <div class="card p-4 shadow" style="width: 320px;">
+    <h3 class="mb-3 text-center">HR Dashboard Login</h3>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+      <div id="errorMsg" class="mt-2 text-danger" style="display:none;"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const username = e.target.username.value.trim();
+      const password = e.target.password.value.trim();
+
+      const users = [
+        { username: 'hruser', password: 'hrpass', role: 'HR' },
+        { username: 'manageruser', password: 'managerpass', role: 'Manager' }
+      ];
+
+      const user = users.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        sessionStorage.setItem('user', JSON.stringify(user));
+        window.location.href = 'index.html';
+      } else {
+        const errMsg = document.getElementById('errorMsg');
+        errMsg.style.display = 'block';
+        errMsg.textContent = 'Invalid username or password';
+      }
+    });
+  </script>
+</body>
+</html>

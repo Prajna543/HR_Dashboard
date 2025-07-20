@@ -1,0 +1,42 @@
+[
+  {
+    "username": "Honey",
+    "password": "Honey",
+    "role": "HR"
+  },
+  {
+    "username": "Hanny",
+    "password": "1234",
+    "role": "HR"
+  },
+  {
+    "username": "Niya",
+    "password": "1234",
+    "role": "HR"
+  },
+  {
+    "username": "Prajna",
+    "password": "Prajna",
+    "role": "Manager"
+  },
+  {
+    "username": "testuser",
+    "password": "testpass",
+    "role": "HR"
+  },
+  {
+    "username": "Prajna Tripurari",
+    "password": "Prajna",
+    "role": "Manager"
+  },
+  {
+    "username": "Neeraj",
+    "password": "Neeraj",
+    "role": "HR"
+  },
+  {
+    "username": "testuser_1753003704203",
+    "password": "testpass",
+    "role": "HR"
+  }
+]
